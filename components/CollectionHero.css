@@ -1,0 +1,229 @@
+/* =========================================================
+   COLLECTION PAGE HERO
+========================================================= */
+
+.collection-page-hero {
+  position: relative;
+  width: 100%;
+
+  min-height: 330px;
+
+  display: flex;
+  align-items: flex-end;
+
+  box-sizing: border-box;
+  overflow: hidden;
+
+  /* ORIGINAL BACKGROUND */
+  background: #e4e0d7;
+
+  /*
+    Enough top space so the heading does not sit
+    too close to the navbar
+  */
+  padding: 125px 6.5vw 38px;
+}
+
+
+/* =========================================================
+   HERO CONTENT
+========================================================= */
+
+.collection-page-hero-content {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  max-width: 1100px;
+}
+
+
+/* =========================================================
+   EYEBROW
+========================================================= */
+
+.collection-page-hero-eyebrow {
+  display: block;
+
+  margin: 0 0 14px;
+
+  color: var(--ink);
+
+  font-size: 10px;
+  line-height: 1;
+
+  font-weight: 500;
+
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+
+  opacity: 0.55;
+}
+
+
+/* =========================================================
+   MAIN TITLE
+========================================================= */
+
+.collection-page-hero-title {
+  margin: 0;
+
+  max-width: 900px;
+
+  font-family: var(--serif);
+
+  /*
+    REDUCED FROM 150px MAX
+  */
+  font-size: clamp(58px, 7.5vw, 110px);
+
+  font-weight: 400;
+
+  line-height: 0.9;
+
+  letter-spacing: -0.04em;
+
+  color: var(--ink);
+}
+
+
+/* =========================================================
+   ITALIC TITLE
+========================================================= */
+
+.collection-page-hero-title em {
+  color: #8e887e;
+
+  font-style: italic;
+  font-weight: 400;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.collection-page-hero-text {
+  max-width: 390px;
+
+  margin: 20px 0 0;
+
+  color: #716d65;
+
+  font-size: 13px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   TABLET / SMALL DESKTOP
+========================================================= */
+
+@media (max-width: 1000px) {
+  .collection-page-hero {
+    min-height: 315px;
+
+    padding: 115px 5vw 34px;
+  }
+
+  .collection-page-hero-title {
+    font-size: clamp(55px, 8vw, 88px);
+  }
+
+  .collection-page-hero-text {
+    margin-top: 18px;
+    font-size: 12.5px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+  .collection-page-hero {
+    min-height: 285px;
+
+    /*
+      More top breathing room from navbar
+    */
+    padding: 100px 6vw 28px;
+  }
+
+  .collection-page-hero-eyebrow {
+    margin-bottom: 12px;
+    font-size: 8px;
+  }
+
+  .collection-page-hero-title {
+    font-size: clamp(46px, 11vw, 68px);
+
+    line-height: 0.9;
+  }
+
+  .collection-page-hero-text {
+    max-width: 330px;
+
+    margin-top: 16px;
+
+    font-size: 11px;
+
+    line-height: 1.5;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 560px) {
+  .collection-page-hero {
+    min-height: 270px;
+
+    padding: 92px 6vw 24px;
+  }
+
+  .collection-page-hero-title {
+    font-size: clamp(43px, 11.5vw, 62px);
+
+    line-height: 0.9;
+  }
+
+  .collection-page-hero-text {
+    max-width: 300px;
+
+    margin-top: 15px;
+
+    font-size: 10.5px;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media (max-width: 390px) {
+  .collection-page-hero {
+    min-height: 255px;
+
+    padding: 86px 6vw 22px;
+  }
+
+  .collection-page-hero-title {
+    font-size: 42px;
+
+    line-height: 0.9;
+  }
+
+  .collection-page-hero-text {
+    max-width: 280px;
+
+    margin-top: 14px;
+
+    font-size: 10px;
+  }
+}

@@ -1,0 +1,141 @@
+/* =========================================================
+   ABOUT PREVIEW
+========================================================= */
+
+.about-preview {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8vw;
+  align-items: center;
+}
+
+
+/* =========================================================
+   ABOUT VISUAL
+========================================================= */
+
+.about-visual {
+  position: relative;
+}
+
+.about-visual .image-frame {
+  height: 610px;
+}
+
+
+/* =========================================================
+   86 INCHES BADGE
+========================================================= */
+
+.about-badge {
+  position: absolute;
+  left: -10px;
+  bottom: -36px;
+
+  width: 154px;
+  height: 154px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 5;
+
+  background: #c7a66d;
+  color: #fff;
+
+  text-align: center;
+}
+
+.about-badge strong {
+  margin-bottom: 5px;
+
+  font-family: var(--serif);
+  font-size: 42px;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.about-badge span {
+  font-family: var(--sans);
+  font-size: 9px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.13em;
+}
+
+
+/* =========================================================
+   ABOUT COPY
+========================================================= */
+
+.about-copy {
+  align-self: center;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+  .about-preview {
+    gap: 5vw;
+  }
+
+  .about-visual .image-frame {
+    height: 520px;
+  }
+
+  .about-badge {
+    left: -25px;
+    bottom: -25px;
+
+    width: 155px;
+    height: 155px;
+  }
+
+  .about-badge strong {
+    font-size: 36px;
+  }
+
+  .about-badge span {
+    font-size: 8px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+  .about-preview {
+    display: block;
+  }
+
+  .about-visual .image-frame {
+    height: 390px;
+  }
+
+  .about-copy {
+    margin-top: 72px;
+  }
+
+  .about-badge {
+    left: 15px;
+    bottom: -20px;
+
+    width: 135px;
+    height: 135px;
+  }
+
+  .about-badge strong {
+    font-size: 34px;
+  }
+
+  .about-badge span {
+    font-size: 7px;
+  }
+}

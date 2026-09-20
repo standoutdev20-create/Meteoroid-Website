@@ -1,0 +1,303 @@
+
+/* =========================================================
+   COLLECTION SECTION
+========================================================= */
+
+.collection-preview {
+  position: relative;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.collection-preview .section-heading-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 60px;
+  margin-bottom: 52px;
+}
+
+.collection-preview .section-heading-row > div {
+  flex: 1;
+}
+
+.collection-preview .section-intro {
+  max-width: 430px;
+  margin: 0;
+  line-height: 1.7;
+}
+
+/* =========================================================
+   PRODUCT GRID
+========================================================= */
+
+.collection-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: repeat(2, 500px);
+  gap: 20px;
+  width: 100%;
+  align-items: stretch;
+}
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.collection-card {
+  position: relative;
+  display: block;
+
+  width: 100%;
+  height: 500px;
+  min-height: 500px;
+  max-height: 500px;
+
+  overflow: hidden;
+
+  background: #e9e6df;
+  color: #fff;
+  text-decoration: none;
+
+  isolation: isolate;
+
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   IMAGE
+========================================================= */
+
+.collection-card-image {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+}
+
+.collection-card-image img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  min-width: 100%;
+  min-height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+
+  transition:
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* =========================================================
+   IMAGE HOVER
+========================================================= */
+
+.collection-card:hover .collection-card-image img {
+  transform: scale(1.06);
+}
+
+/* =========================================================
+   OVERLAY
+========================================================= */
+
+.collection-card .card-overlay {
+  position: absolute;
+  inset: 0;
+
+  z-index: 1;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.76) 0%,
+      rgba(0, 0, 0, 0.38) 28%,
+      rgba(0, 0, 0, 0.08) 62%,
+      transparent 100%
+    );
+}
+
+/* =========================================================
+   CARD INFO
+========================================================= */
+
+.collection-card-info {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  z-index: 2;
+
+  display: grid;
+  grid-template-columns: 38px minmax(0, 1fr) 28px;
+
+  align-items: end;
+
+  gap: 14px;
+
+  padding: 25px;
+
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   NUMBER
+========================================================= */
+
+.collection-number {
+  align-self: start;
+
+  font-size: 11px;
+  letter-spacing: 0.12em;
+
+  opacity: 0.75;
+}
+
+/* =========================================================
+   TEXT
+========================================================= */
+
+.collection-card-text {
+  min-width: 0;
+}
+
+.collection-card-text h3 {
+  margin: 0 0 7px;
+
+  font-size: clamp(19px, 2vw, 26px);
+  line-height: 1.05;
+
+  font-weight: 500;
+  letter-spacing: -0.025em;
+}
+
+.collection-card-text p {
+  margin: 0;
+
+  font-size: 10px;
+  line-height: 1.4;
+
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+
+  opacity: 0.72;
+}
+
+/* =========================================================
+   ARROW
+========================================================= */
+
+.collection-card-info svg {
+  transition:
+    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.collection-card:hover .collection-card-info svg {
+  transform: translate(5px, 5px);
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.collection-preview .section-footer-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 30px;
+
+  margin-top: 32px;
+}
+
+.collection-preview .section-footer-link span {
+  font-size: 10px;
+
+  text-transform: uppercase;
+  letter-spacing: 0.13em;
+
+  opacity: 0.58;
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+  .collection-preview .section-heading-row {
+    gap: 35px;
+    margin-bottom: 40px;
+  }
+
+  .collection-feature-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: repeat(3, 460px);
+
+    gap: 16px;
+  }
+
+  .collection-card {
+    height: 460px;
+    min-height: 460px;
+    max-height: 460px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 640px) {
+  .collection-preview .section-heading-row {
+    display: block;
+    margin-bottom: 30px;
+  }
+
+  .collection-preview .section-intro {
+    max-width: 100%;
+    margin-top: 20px;
+  }
+
+  .collection-feature-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, 420px);
+
+    gap: 14px;
+  }
+
+  .collection-card {
+    height: 420px;
+    min-height: 420px;
+    max-height: 420px;
+  }
+
+  .collection-card-info {
+    grid-template-columns: 32px minmax(0, 1fr) 24px;
+
+    gap: 10px;
+
+    padding: 20px;
+  }
+
+  .collection-card-text h3 {
+    font-size: 21px;
+  }
+
+  .collection-preview .section-footer-link {
+    flex-direction: column;
+    align-items: flex-start;
+
+    margin-top: 26px;
+  }
+}
+

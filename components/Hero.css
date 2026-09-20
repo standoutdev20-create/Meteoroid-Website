@@ -1,0 +1,1167 @@
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100svh;
+  min-height: 720px;
+
+  /*
+    Important:
+    The stats card extends outside the hero.
+  */
+  overflow: visible;
+
+  background: #f6f5f2;
+  isolation: isolate;
+
+  /*
+    Creates space between Hero and About so the floating
+    stats card has room to sit between them.
+  */
+  margin-bottom: 116px;
+}
+
+
+/* =========================================================
+   BACKGROUND IMAGE
+========================================================= */
+
+.hero-background {
+  position: absolute;
+  inset: -2%;
+
+  z-index: -5;
+
+  background-image:
+    url("/images/meteoroid-hero.png");
+
+  background-position:
+    center center;
+
+  background-repeat:
+    no-repeat;
+
+  background-size:
+    cover;
+
+  transition:
+    transform 0.25s
+    cubic-bezier(0.22, 1, 0.36, 1);
+
+  will-change: transform;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   LEFT SIDE WHITE FADE
+========================================================= */
+
+.hero-left-overlay {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 51%;
+  height: 100%;
+
+  z-index: -3;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(248, 247, 245, 0.88) 0%,
+      rgba(248, 247, 245, 0.82) 55%,
+      rgba(248, 247, 245, 0.68) 70%,
+      rgba(248, 247, 245, 0.42) 84%,
+      rgba(248, 247, 245, 0) 100%
+    );
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   EXTRA SOFT BLEND
+========================================================= */
+
+.hero::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  z-index: -2;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(248, 247, 245, 0.18) 0%,
+      rgba(248, 247, 245, 0) 45%
+    );
+}
+
+
+/* =========================================================
+   NOISE
+========================================================= */
+
+.hero-noise {
+  position: absolute;
+  inset: 0;
+
+  z-index: 5;
+
+  pointer-events: none;
+
+  opacity: 0.035;
+
+  background-image:
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.35'/%3E%3C/svg%3E");
+}
+
+
+/* =========================================================
+   HERO COPY
+========================================================= */
+
+.hero-copy {
+  position: absolute;
+
+  z-index: 10;
+
+  left:
+    clamp(40px, 6.2vw, 100px);
+
+  top: 50%;
+
+  transform:
+    translateY(-50%);
+
+  width:
+    min(510px, 40vw);
+}
+
+
+/* =========================================================
+   LABEL
+========================================================= */
+
+.hero-label {
+  display: flex;
+
+  align-items: center;
+
+  gap: 18px;
+
+  margin-bottom: 36px;
+
+  color: #747d8d;
+
+  font-family:
+    Inter,
+    Arial,
+    sans-serif;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  letter-spacing: 3.5px;
+
+  text-transform: uppercase;
+}
+
+
+.hero-label-line {
+  width: 38px;
+  height: 1px;
+
+  background: #c6a66a;
+
+  flex-shrink: 0;
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.hero-copy h1 {
+  margin: 0;
+
+  color: #151515;
+
+  font-family:
+    "Times New Roman",
+    Times,
+    serif;
+
+  font-size:
+    clamp(58px, 5.15vw, 84px);
+
+  font-weight: 400;
+
+  line-height: 0.97;
+
+  letter-spacing: -3.5px;
+}
+
+
+.hero-copy h1 em {
+  color: #9da7b7;
+
+  font-style: italic;
+
+  font-weight: 400;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.hero-copy p {
+  width: 500px;
+
+  max-width: 100%;
+
+  margin:
+    28px 0 0;
+
+  color: #747e8e;
+
+  font-family:
+    Inter,
+    Arial,
+    sans-serif;
+
+  font-size: 17px;
+
+  font-weight: 400;
+
+  line-height: 1.75;
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.hero-actions {
+  display: flex;
+
+  align-items: center;
+
+  gap: 18px;
+
+  margin-top: 46px;
+}
+
+
+/* =========================================================
+   PRIMARY BUTTON
+========================================================= */
+
+.hero-primary-btn {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  height: 60px;
+
+  padding:
+    0 37px;
+
+  background: #171717;
+
+  color: #fff;
+
+  text-decoration: none;
+
+  font-family:
+    Inter,
+    Arial,
+    sans-serif;
+
+  font-size: 13px;
+
+  font-weight: 500;
+
+  letter-spacing: 1.2px;
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+
+.hero-primary-btn:hover {
+  background: #292929;
+
+  transform:
+    translateY(-2px);
+}
+
+
+/* =========================================================
+   VIDEO BUTTON
+========================================================= */
+
+.hero-video-btn {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 13px;
+
+  height: 60px;
+
+  padding:
+    0 31px;
+
+  background:
+    rgba(255, 255, 255, 0.93);
+
+  border:
+    1px solid rgba(0, 0, 0, 0.08);
+
+  color: #303030;
+
+  text-decoration: none;
+
+  font-family:
+    Inter,
+    Arial,
+    sans-serif;
+
+  font-size: 13px;
+
+  font-weight: 500;
+
+  letter-spacing: 1.2px;
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+
+.hero-video-btn:hover {
+  background: #fff;
+
+  transform:
+    translateY(-2px);
+}
+
+
+/* =========================================================
+   PLAY ICON
+========================================================= */
+
+.hero-play {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width: 19px;
+  height: 19px;
+
+  border:
+    1px solid #777;
+
+  border-radius: 50%;
+}
+
+
+/* =========================================================
+   HERO STATS
+========================================================= */
+
+.hero-stats {
+  position: absolute;
+
+  /*
+    Card stays aligned with the viewport edges.
+  */
+
+  left: 24px;
+  right: 24px;
+
+  /*
+    Push card below the Hero bottom.
+  */
+
+  bottom: -92px;
+
+  z-index: 30;
+
+  height: 154px;
+
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    1fr
+    1fr
+    1.25fr;
+
+  align-items: center;
+
+  box-sizing: border-box;
+
+  /*
+    More transparent glass effect.
+  */
+
+  background:
+    rgba(255, 255, 255, 0.78);
+
+  border:
+    1px solid rgba(225, 227, 230, 0.75);
+
+  border-radius: 16px;
+
+  box-shadow:
+    0 14px 40px
+    rgba(30, 35, 45, 0.06);
+
+  backdrop-filter:
+    blur(14px);
+
+  -webkit-backdrop-filter:
+    blur(14px);
+}
+
+
+/* =========================================================
+   STAT ITEM
+========================================================= */
+
+.hero-stat {
+  min-width: 0;
+
+  height: 86px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  box-sizing: border-box;
+
+  padding:
+    0 28px;
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   STAT DIVIDERS
+========================================================= */
+
+.hero-stat-bordered {
+  border-left:
+    1px solid
+    rgba(145, 151, 161, 0.22);
+}
+
+
+/*
+   Divider before description.
+*/
+
+.hero-stat-description {
+  border-left:
+    1px solid
+    rgba(145, 151, 161, 0.22);
+}
+
+
+/* =========================================================
+   STAT NUMBER
+========================================================= */
+
+.hero-stat-number {
+  color: #181818;
+
+  font-family:
+    "Times New Roman",
+    Times,
+    serif;
+
+  /*
+    Ideal desktop size.
+  */
+
+  font-size: 38px;
+
+  font-weight: 400;
+
+  line-height: 0.95;
+
+  letter-spacing: -1px;
+}
+
+
+/* =========================================================
+   STAR
+========================================================= */
+
+.hero-star {
+  display: inline-block;
+
+  margin-left: 3px;
+
+  color: #181818;
+
+  font-family:
+    Arial,
+    sans-serif;
+
+  font-size: 17px;
+
+  line-height: 1;
+
+  vertical-align: 7px;
+}
+
+
+/* =========================================================
+   STAT LABEL
+========================================================= */
+
+.hero-stat-label {
+  margin-top: 10px;
+
+  color: #788190;
+
+  font-family:
+    Inter,
+    Arial,
+    sans-serif;
+
+  font-size: 11px;
+
+  font-weight: 500;
+
+  line-height: 1.2;
+
+  letter-spacing: 1.8px;
+
+  text-transform: uppercase;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   STAT DESCRIPTION
+========================================================= */
+
+.hero-stat-description {
+  align-items: flex-start;
+
+  justify-content: center;
+
+  padding-left: 46px;
+
+  padding-right: 38px;
+
+  text-align: left;
+}
+
+
+.hero-stat-description p {
+  max-width: 330px;
+
+  margin: 0;
+
+  color: #788190;
+
+  font-family:
+    Inter,
+    Arial,
+    sans-serif;
+
+  font-size: 13px;
+
+  font-weight: 400;
+
+  line-height: 1.65;
+
+  letter-spacing: 0.1px;
+}
+
+
+/* =========================================================
+   OLD SCROLL INDICATOR
+========================================================= */
+
+.hero-scroll {
+  display: none;
+}
+
+
+/* =========================================================
+   OLD LOCATION
+========================================================= */
+
+.hero-location {
+  display: none;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .hero {
+    margin-bottom: 105px;
+  }
+
+
+  /* -------------------------------------------------------
+     COPY
+  ------------------------------------------------------- */
+
+  .hero-copy {
+    width: 47vw;
+  }
+
+
+  .hero-copy h1 {
+    font-size:
+      clamp(52px, 6vw, 70px);
+  }
+
+
+  /* -------------------------------------------------------
+     LEFT FADE
+  ------------------------------------------------------- */
+
+  .hero-left-overlay {
+    width: 55%;
+  }
+
+
+  /* -------------------------------------------------------
+     STATS
+  ------------------------------------------------------- */
+
+  .hero-stats {
+    left: 20px;
+    right: 20px;
+
+    bottom: -82px;
+
+    height: 140px;
+
+    grid-template-columns:
+      1fr
+      1fr
+      1fr
+      1.2fr;
+  }
+
+
+  .hero-stat {
+    height: 76px;
+
+    padding:
+      0 18px;
+  }
+
+
+  .hero-stat-number {
+    font-size: 33px;
+  }
+
+
+  .hero-stat-label {
+    font-size: 9px;
+
+    letter-spacing: 1.4px;
+  }
+
+
+  .hero-stat-description {
+    padding-left: 25px;
+
+    padding-right: 20px;
+  }
+
+
+  .hero-stat-description p {
+    font-size: 11px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .hero {
+    /*
+      No additional space because the stats card
+      is completely removed on mobile.
+    */
+
+    min-height: 760px;
+
+    height: 100svh;
+
+    margin-bottom: 0;
+
+    overflow: hidden;
+  }
+
+
+  /* -------------------------------------------------------
+     BACKGROUND
+
+     Important:
+     Keep more of the original image visible.
+
+     The position is moved toward the left so the
+     Meteoroid logo inside the source image remains visible.
+  ------------------------------------------------------- */
+
+  .hero-background {
+    inset: -1%;
+
+    background-position:
+      28% center;
+
+    background-size:
+      cover;
+
+    transform:
+      translate3d(
+        0,
+        0,
+        0
+      )
+      scale(1.01) !important;
+  }
+
+
+  /* -------------------------------------------------------
+     MOBILE IMAGE FADE
+
+     Much more transparent than desktop.
+
+     This allows the marble/architecture and logo
+     from the original image to remain visible.
+  ------------------------------------------------------- */
+
+  .hero-left-overlay {
+    width: 100%;
+
+    background:
+      linear-gradient(
+        180deg,
+        rgba(248, 247, 245, 0.42) 0%,
+        rgba(248, 247, 245, 0.32) 30%,
+        rgba(248, 247, 245, 0.20) 55%,
+        rgba(248, 247, 245, 0.08) 75%,
+        rgba(248, 247, 245, 0) 100%
+      );
+  }
+
+
+  /* -------------------------------------------------------
+     REMOVE EXTRA MOBILE WHITE BLEND
+  ------------------------------------------------------- */
+
+  .hero::after {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(248, 247, 245, 0.05) 0%,
+        rgba(248, 247, 245, 0) 55%
+      );
+  }
+
+
+  /* -------------------------------------------------------
+     COPY
+
+     Moved lower so the logo and upper architectural
+     portion of the image remain visible.
+  ------------------------------------------------------- */
+
+  .hero-copy {
+    left: 24px;
+    right: 24px;
+
+    top: 53%;
+
+    width: auto;
+
+    transform:
+      translateY(-50%);
+  }
+
+
+  /* -------------------------------------------------------
+     LABEL
+  ------------------------------------------------------- */
+
+  .hero-label {
+    margin-bottom: 20px;
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+    gap: 10px;
+  }
+
+
+  .hero-label-line {
+    width: 26px;
+  }
+
+
+  /* -------------------------------------------------------
+     HEADING
+  ------------------------------------------------------- */
+
+  .hero-copy h1 {
+    font-size:
+      clamp(39px, 10.5vw, 52px);
+
+    line-height: 0.98;
+
+    letter-spacing: -1.8px;
+  }
+
+
+  .hero-copy h1 em {
+    color: #9da7b7;
+  }
+
+
+  /* -------------------------------------------------------
+     DESCRIPTION
+  ------------------------------------------------------- */
+
+  .hero-copy p {
+    width: auto;
+
+    max-width: 390px;
+
+    margin-top: 20px;
+
+    font-size: 13px;
+
+    line-height: 1.55;
+  }
+
+
+  /* -------------------------------------------------------
+     BUTTONS
+  ------------------------------------------------------- */
+
+  .hero-actions {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 9px;
+
+    margin-top: 27px;
+  }
+
+
+  .hero-primary-btn,
+  .hero-video-btn {
+    width: 100%;
+
+    height: 50px;
+
+    padding:
+      0 18px;
+
+    box-sizing: border-box;
+
+    font-size: 10px;
+
+    letter-spacing: 0.9px;
+  }
+
+
+  .hero-video-btn {
+    background:
+      rgba(255, 255, 255, 0.72);
+
+    backdrop-filter:
+      blur(5px);
+
+    -webkit-backdrop-filter:
+      blur(5px);
+  }
+
+
+  /* -------------------------------------------------------
+     STATS
+
+     Completely removed from mobile.
+  ------------------------------------------------------- */
+
+  .hero-stats {
+    display: none !important;
+  }
+
+
+  /* -------------------------------------------------------
+     OLD BOTTOM ELEMENTS
+  ------------------------------------------------------- */
+
+  .hero-scroll,
+  .hero-location {
+    display: none;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .hero {
+    min-height: 740px;
+
+    height: 100svh;
+
+    margin-bottom: 0;
+
+    overflow: hidden;
+  }
+
+
+  /* -------------------------------------------------------
+     BACKGROUND
+
+     Keep the logo and architecture visible.
+  ------------------------------------------------------- */
+
+  .hero-background {
+    background-position:
+      25% center;
+
+    background-size:
+      cover;
+  }
+
+
+  /* -------------------------------------------------------
+     COPY
+  ------------------------------------------------------- */
+
+  .hero-copy {
+    left: 20px;
+    right: 20px;
+
+    top: 52%;
+  }
+
+
+  /* -------------------------------------------------------
+     LABEL
+  ------------------------------------------------------- */
+
+  .hero-label {
+    margin-bottom: 18px;
+
+    font-size: 7.5px;
+
+    letter-spacing: 1.7px;
+
+    gap: 9px;
+  }
+
+
+  .hero-label-line {
+    width: 24px;
+  }
+
+
+  /* -------------------------------------------------------
+     HEADING
+  ------------------------------------------------------- */
+
+  .hero-copy h1 {
+    font-size:
+      clamp(36px, 10.8vw, 46px);
+
+    line-height: 0.98;
+
+    letter-spacing: -1.5px;
+  }
+
+
+  /* -------------------------------------------------------
+     DESCRIPTION
+  ------------------------------------------------------- */
+
+  .hero-copy p {
+    margin-top: 18px;
+
+    font-size: 12.5px;
+
+    line-height: 1.55;
+  }
+
+
+  /* -------------------------------------------------------
+     BUTTONS
+  ------------------------------------------------------- */
+
+  .hero-actions {
+    margin-top: 24px;
+
+    gap: 8px;
+  }
+
+
+  .hero-primary-btn,
+  .hero-video-btn {
+    height: 48px;
+
+    font-size: 9.5px;
+
+    letter-spacing: 0.8px;
+  }
+
+
+  .hero-play {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media (max-width: 380px) {
+
+  .hero {
+    min-height: 700px;
+  }
+
+
+  .hero-copy {
+    left: 18px;
+    right: 18px;
+
+    top: 52%;
+  }
+
+
+  .hero-copy h1 {
+    font-size: 35px;
+
+    letter-spacing: -1.3px;
+  }
+
+
+  .hero-copy p {
+    font-size: 11.5px;
+  }
+
+
+  .hero-label {
+    font-size: 7px;
+
+    letter-spacing: 1.4px;
+  }
+
+
+  .hero-primary-btn,
+  .hero-video-btn {
+    height: 46px;
+
+    font-size: 9px;
+  }
+}
+
+
+
+/* =========================================================
+   HERO STATS
+   Thinner + positioned lower between Hero and About
+========================================================= */
+
+.hero-stats {
+  position: absolute;
+
+  left: 24px;
+  right: 24px;
+
+  /* Push the card further down */
+  bottom: -112px;
+
+  z-index: 30;
+
+  height: 120px;
+
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    1fr
+    1fr
+    1.25fr;
+
+  align-items: center;
+
+  box-sizing: border-box;
+
+  background:
+    rgba(255, 255, 255, 0.68);
+
+  border:
+    1px solid rgba(225, 227, 230, 0.68);
+
+  border-radius: 16px;
+
+  box-shadow:
+    0 14px 40px
+    rgba(30, 35, 45, 0.05);
+
+  backdrop-filter:
+    blur(14px);
+
+  -webkit-backdrop-filter:
+    blur(14px);
+}
