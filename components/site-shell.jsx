@@ -12,6 +12,7 @@ import {
   X,
   Youtube,
 } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import { contact } from "@/data/content";
 
@@ -341,8 +342,11 @@ export function Shell({ children }) {
         href={contact.whatsapp}
         target="_blank"
         rel="noreferrer"
+        aria-label="Enquire on WhatsApp"
       >
-        <span>WA</span>
+        <span>
+          <FaWhatsapp size={16} aria-hidden="true" />
+        </span>
         <b>Enquire on WhatsApp</b>
       </a>
       <Footer />

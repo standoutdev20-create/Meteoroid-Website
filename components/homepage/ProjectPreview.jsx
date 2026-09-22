@@ -10,7 +10,7 @@ const projectPreviewItems = [
     title: "The Luxury Residence",
     category: "Residential",
     service: "CNC Wall Cladding",
-    image: "/products/stone-veneer-mix.png",
+    image: "/products/stone1.jpg",
   },
   {
     id: 2,
