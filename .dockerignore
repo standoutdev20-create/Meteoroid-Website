@@ -1,0 +1,9 @@
+node_modules
+.next
+.git
+memory
+test_result.md
+Dockerfile
+.dockerignore
+npm-debug.log*
+.env*
